@@ -1,0 +1,439 @@
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+               scroll-behavior: smooth;
+        }
+        .section{
+            padding-top: 100px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+         
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+        .container{
+            max-width: 1000px;
+            margin: 0 auto;
+
+        }
+        hr{
+            width: 15%;
+            margin: 40px auto;
+            height: 4px;
+            color: rgb(210, 208, 208);
+            background: rgb(210, 208, 208);
+            border-radius: 10px;
+        }
+
+        .header {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .nav {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav img {
+            width: 60px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        #navgroup {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #navgroup a {
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            transition: .3s;
+            text-decoration-color: bisque;
+        }
+
+        #navgroup a:hover {
+            background: rgba(132, 131, 131, 0.2);
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: bisque;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 3px;
+        }
+
+        .mobileber {
+            display:none;
+        }
+
+        .mobileberShow {
+            position: relative;
+            transition: ease-in-out .3s;
+            padding: 25px;
+        }
+         .fa-xmark{
+            display: none;
+            transition: .3s;
+         }
+        .hiddenGroup {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            padding: 10px;
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+            background: rgba(4, 0, 0, 0.2);
+        }
+
+        .hiddenGroup a {
+            display: block;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            transition: .3s;
+            text-decoration-color: bisque;
+            margin: 5px 0;
+            transition: ease-in-out .5s;
+        }
+
+        .hiddenGroup a:hover {
+            background: rgba(132, 131, 131, 0.2);
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: bisque;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 3px;
+        }
+        .mobileberShow:hover {
+            background:rgba(132, 131, 131, 0.2) ;
+            border-radius: 5px;
+        }
+
+        .mobileberShow:hover .hiddenGroup{
+            visibility:visible;
+            opacity: 1;
+            z-index: 999;
+        }
+        .mobileberShow:hover  .fa-xmark {
+            display: block;
+            
+        }
+        .mobileberShow:hover  .fa-bars{
+            display: none;
+        }
+        .hero-section {
+            background-image: url("../img/todocover.jpg");
+            background-size: cover;
+            background-position: center;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero-content button {
+            padding: 15px 30px;
+            font-size: 16px;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: ease-in-out 0.3s;
+        }
+
+        .hero-content button:hover {
+            background-color: #e67e22;
+        }
+
+
+       .clockSection {
+    width: 100%;
+    margin: 20px 0;
+}
+.clock-part {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-between;
+    align-items: center;
+}
+.extra {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+        height: 320px;
+    width: 320px;
+    background: blue;
+        border-radius: 16px;
+    background: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        transition: .3s ease-in-out;
+}
+
+.clock-part {
+
+}
+
+.clock, .stopwatch {
+
+
+    color: white;
+    text-align: center;
+
+    /* flex: 1; */
+    margin: 10px; 
+}
+
+.extra:hover{
+    transform: scale(1.05);
+}
+
+
+.time {
+    font-size:48px;
+    margin: 0;
+}
+
+#date {
+    font-size: 20px;
+    opacity: 0.8;
+    margin-top: 20px;
+}
+
+.stopwatch h3 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.stopwatchTime {
+    font-size:38px;
+    margin: 20px 0;
+}
+
+.button {
+    padding: 18px 36px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition:  0.3s;
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+       
+
+/* to do section start */
+#todo{
+    margin-bottom: 100px;
+    
+}
+.extraDiv{
+    text-align: center;
+    background: rgba(200, 200, 200, 0.2); 
+    border-radius: 5px;
+    padding: 40px 0;
+}
+.extraDiv h2{
+    margin-bottom: 30px;
+    font-size: 45px;
+}
+#addTask{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 10px 20px;
+     background: rgba(0, 0, 0, 0.6);
+   color:white;
+   border-radius: 5px;
+   font-size: 15px;
+}
+#addTask #taskInput{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(244, 200, 56);
+    transition: .3s;
+}
+#addTask #taskInput::placeholder{
+    font-size: 15px;
+
+}
+#addTask #taskInput:focus{
+    outline: none;
+    box-shadow: 0px 0px 3px rgb(248, 210, 86);
+}
+#addTaskBtn{
+            padding: 15px 30px;
+            font-size: 16px;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: ease-in-out 0.3s;
+}
+#addTaskBtn:hover{
+    background-color: #e67e22;
+}
+.showTask{
+    margin: 40px 0;
+    text-align: center;
+    background: rgba(200, 200, 200, 0.2); 
+    padding: 40px  0 50px;
+    border-radius: 5px;
+}
+.showTask .headingOfTask{
+    font-size: 45px;
+}
+.addedTask{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.6);
+    color:white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+.addedTask p{
+    width: 200px;
+    text-align: left;
+}
+.btn{
+            padding: 15px 30px;
+            font-size: 16px;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: ease-in-out 0.3s;
+}
+.btn:hover{
+    background-color: #e67e22;
+}
+.completed{
+    background-color: green;
+}
+
+
+
+/* footer part start */
+footer{
+    background: gray;
+    text-align: center;
+    padding: 30px 0;
+}
+footer .socialMedia{
+    padding: 10px 0;
+    /* margin-top: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+footer .socialMedia i{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+}
+footer p{
+    margin: 10px 0;
+}
+
+
+
+
+ @media (max-width: 480px) {
+        .mobileber {
+                display: block;
+            }
+            #navgroup {
+                display: none;
+            }
+
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+            #addTaskBtn,.btn{
+                padding: 7px 12px;
+            }
+
+        }
+ @media (max-width: 765px) {
+    .clock-part {
+        flex-direction: column;
+    }
+
+    .extra {
+        width: 100%;
+        margin:40px  auto;
+    }
+                .addedTask p{
+    width: 40%;
+
+}
+}

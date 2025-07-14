@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/fontawesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#home"><img src="../img/2ndlogo.png" alt=""></a>
+            <ul id="navgroup">
+                <li class="navitem"><a href="#home">home</a></li>
+                <li class="navitem"><a href="#clock">clock</a></li>
+                <li class="navitem"><a href="#todo">to do</a></li>
+            </ul>
+            <ul class="mobileber">
+                <li class="mobileberShow"><i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-xmark"></i>
+
+                    <ul class="hiddenGroup">
+                        <li class="navitem"><a href="#home">home</a></li>
+                        <li class="navitem"><a href="#clock">clock</a></li>
+                        <li class="navitem"><a href="#todo">to do</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Stay Organized, Stay Productive</h1>
+                <p>Manage your tasks, track your progress, and get things done with ease. Start organizing today!</p>
+                <button><a href="#todo">Get Started</a></button>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="clockSection  section" id="clock">
+        <div class="container">
+            <div class="clock-part">
+                <div class="extra">
+                    <div class="clock">
+                        <h2 class="time">12:00 PM</h2>
+                        <p id="date">3/2/2025</p>
+                    </div>
+                </div>
+                <div class="extra">
+                    <div class="stopwatch">
+                        <h3>Stopwatch</h3>
+                        <p class="stopwatchTime">00:00:00</p>
+                        <button id="start" class="button">Start</button>
+                        <button id="reset" class="button">Stop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="todo" class=" section">
+        <div class="container">
+            <div class="extraDiv">
+                <h2>Add Your Tasks</h2>
+                <div id="addTask">
+                    <div class="input">
+                        <label for="taskInput">Add your task</label>
+                        <input type="text" id="taskInput" placeholder="Add your task...">
+                    </div>
+                    <button id="addTaskBtn" class="btn" style="">Click to add</button>
+                </div>
+            </div>
+            <div class="showTask">
+                <h2 class="headingOfTask">Your Tasks</h2>
+                <div class="parrent">
+                    <div class="addedTask">
+                        <p class="task">C++ basics</p>
+                        <button class="btn done ">complete?</button>
+                        <button class="btn delete"> delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <footer>
+        <div class="socialMedia">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p>Info Support Marketing</p>
+        <p>Terms of Use Privacy Policy</p>
+        <p><i class="fa-solid fa-copyright"></i>2025 TaskFlow</p>
+    </footer>
+    <script src="js/todo.js"></script>
+    <script>
+        // js for to do
+
+
+
+        // js for clock
+        function clock() {
+            const timeShow = document.querySelector(".time");
+            const dateShow = document.getElementById("date");
+            const dateObj = new Date();
+            const hourin24 = dateObj.getHours();
+            let hour = hourin24 % 12 === 0? 12 : hourin24 % 12;
+            console.log(hour)
+            const minute = dateObj.getMinutes();
+            const second = dateObj.getSeconds();
+            dateShow.textContent = parseInt(dateObj.getMonth()) + 1 + "/" + dateObj.getDate() + "/" + dateObj.getFullYear();
+            timeShow.textContent = (hour > 9 ? hour : "0" + hour) + ":" + (minute > 9 ? minute : "0" + minute) + ":" + (second > 9 ? second : "0" + second) + " " + (hourin24 >= 12 ? "PM" : "AM");
+            // console.log(dateObj)
+
+        }
+        setInterval(clock, 1000);
+        // js for stop watch
+        let h = 0, m = 0, s = 0;
+        let show = document.querySelector(".stopwatchTime")
+        const start = document.getElementById("start")
+        const stop = document.getElementById("reset")
+        let x, condition = true;
+        function stopwatch() {
+
+            s = s + 1;
+            if (s > 59) {
+                s = 0;
+                m++;
+            }
+            if (m > 59) {
+                m = 0;
+                h++
+            }
+
+            show.textContent = (h > 9 ? h : "0" + h) + ":" + (m > 9 ? m : "0" + m) + ":" + (s > 9 ? s : "0" + s);
+
+        }
+        start.addEventListener("click", () => {
+            if (condition) {
+                x = setInterval(stopwatch, 1000)
+                condition = false;
+            }
+        })
+        stop.addEventListener("click", () => {
+            clearInterval(x);
+            condition = true;
+            h = 0;
+            m = 0;
+            s = 0;
+        })
+        // let z=new Date();
+        // console.log(z)
+
+    </script>
+</body>
+
+</html>
